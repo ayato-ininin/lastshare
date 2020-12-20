@@ -4,8 +4,8 @@
    <div class="card">
      <p>ログイン</p>
     <div class="form">
-      <input type="email /" placeholder="メールアドレス" v-model="email">
-      <input type="password /" placeholder="パスワード" v-model="password">
+      <input type="email" placeholder="メールアドレス" v-model="email">
+      <input type="password" placeholder="パスワード" v-model="password">
       <br>
       <button @click="auth">ログイン</button>
     </div>
