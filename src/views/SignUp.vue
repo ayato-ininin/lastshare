@@ -32,7 +32,7 @@ export default {
   },
   methods:{
     auth(){
-      axios.post("https://pure-sea-97931.herokuapp.com/api/register",{
+      axios.post("http://127.0.0.1:8000/register",{
         name:this.name,
         profile:this.profile,
         email:this.email,

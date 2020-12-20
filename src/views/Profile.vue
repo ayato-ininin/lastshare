@@ -38,7 +38,7 @@ export default {
     edit() {
       if (!this.active) {
         axios
-          .put("https://pure-sea-97931.herokuapp.com/api/user", {
+          .put("http://127.0.0.1:8000/api/user", {
             email: this.$store.state.user.email,
             profile: this.profile,
           })

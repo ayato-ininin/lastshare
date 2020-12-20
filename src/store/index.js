@@ -29,14 +29,14 @@ export default new Vuex.Store({
   actions: {
     async login({ commit }, { email, password }) {
       const responseLogin = await axios.post(
-        "https://pure-sea-97931.herokuapp.com/api/login",
+        "http://127.0.0.1:8000/api/login",
         {
           email: email,
           password: password,
         }
       );
       const responseUser = await axios.get(
-        "https://pure-sea-97931.herokuapp.com/api/user",
+        "http://127.0.0.1:8000/api/user",
         {
           params: {
             email: email,
@@ -49,7 +49,7 @@ export default new Vuex.Store({
     },
     logout({ commit }) {
       axios
-        .post("https://pure-sea-97931.herokuapp.com/api/logout", {
+        .post("http://127.0.0.1:8000/api/logout", {
           auth: this.state.auth,
         })
         .then((response) => {

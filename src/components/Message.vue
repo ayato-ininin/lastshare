@@ -40,7 +40,7 @@ export default {
           if (element.user_id == this.$store.state.user.id) {
             axios({
               method: "delete",
-              url: "https://pure-sea-97931.herokuapp.com/api/like",
+              url: "http://127.0.0.1:8000/api/like",
               data: {
                 share_id: this.shares[index].item.id,
                 user_id: this.$store.state.user.id,
@@ -56,7 +56,7 @@ export default {
         });
       } else {
         axios
-          .post("https://pure-sea-97931.herokuapp.com/api/like", {
+          .post("http://127.0.0.1:8000/api/like", {
             share_id: this.shares[index].item.id,
             user_id: this.$store.state.user.id,
           })
@@ -72,7 +72,7 @@ export default {
     del(index) {
       axios
         .delete(
-          "https://pure-sea-97931.herokuapp.com/api/shares/" +
+          "http://127.0.0.1:8000/api/shares/" +
             this.shares[index].item.id
         )
         .then((response) => {
@@ -86,12 +86,12 @@ export default {
     async getShares() {
       let data = [];
       const shares = await axios.get(
-        "https://pure-sea-97931.herokuapp.com/api/shares"
+        "http://127.0.0.1:8000/api/shares"
       );
       for (let i = 0; i < shares.data.data.length; i++) {
         await axios
           .get(
-            "https://pure-sea-97931.herokuapp.com/api/shares/" +
+            "http://127.0.0.1:8000/api/shares/" +
               shares.data.data[i].id
           )
           .then((response) => {
