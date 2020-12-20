@@ -32,7 +32,7 @@ export default {
   },
   methods:{
     auth(){
-      axios.post("http//:localhost:8000/api/register",{
+      axios.post("http//localhost:8000/api/register",{
         name:this.name,
         profile:this.profile,
         email:this.email,
